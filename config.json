@@ -1,0 +1,12 @@
+{
+  "gemName": "gong_api",
+  "moduleName": "GongAPI",
+  "gemVersion": "1.0.0",
+  "gemLicense": "MIT",
+  "gemHomepage": "https://gitlab.com/optonal/gong-api",
+  "gemSummary": "A Ruby Swagger API client for Gong",
+  "gemDescription": "A Ruby Swagger API client for Gong",
+  "gemAuthor": "OpTonal Inc.",
+  "gemAuthorEmail": "matija@optonal.com",
+  "hideGenerationTimestamp": false
+}
