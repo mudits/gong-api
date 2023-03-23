@@ -18,9 +18,9 @@ Gem::Specification.new do |s|
   s.name        = "gong_api"
   s.version     = GongAPI::VERSION
   s.platform    = Gem::Platform::RUBY
-  s.authors     = ["OpTonal Inc."]
-  s.email       = ["matija@optonal.com"]
-  s.homepage    = "https://gitlab.com/optonal/gong-api"
+  s.authors     = ["Matija Čupić"]
+  s.email       = ["matteeyah@gmail.com"]
+  s.homepage    = "https://github.com/matteeyah/gong-api"
   s.summary     = "A Ruby Swagger API client for Gong"
   s.description = "A Ruby Swagger API client for Gong"
   s.license     = 'MIT'

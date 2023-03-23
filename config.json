@@ -3,10 +3,10 @@
   "moduleName": "GongAPI",
   "gemVersion": "1.0.0",
   "gemLicense": "MIT",
-  "gemHomepage": "https://gitlab.com/optonal/gong-api",
+  "gemHomepage": "https://github.com/matteeyah/gong-api",
   "gemSummary": "A Ruby Swagger API client for Gong",
   "gemDescription": "A Ruby Swagger API client for Gong",
-  "gemAuthor": "OpTonal Inc.",
-  "gemAuthorEmail": "matija@optonal.com",
+  "gemAuthor": "Matija Čupić",
+  "gemAuthorEmail": "matteeyah@gmail.com",
   "hideGenerationTimestamp": false
 }
