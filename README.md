@@ -2,7 +2,58 @@
 
 GongAPI - the Ruby gem for the Gong API
 
-<h2>Overview</h2> <p> The Gong API allows you to: </p> <ol> <li> Receive the following information from Gong: <ol type=\"a\"> <li> Your company's <a href=\"#tag--Calls\">calls</a> in Gong </li> <li> Your company's <a href=\"#tag--Users\">users</a> in Gong </li> <li> Your company's user <a href=\"#tag--Stats\">stats</a> in Gong </li> <li> Your company's user <a href=\"#tag--Settings\">settings</a> in Gong </li> <li> Your company's <a href=\"#tag--Library\">libraries</a> in Gong </li> </ol></li> <li> <a href=\"#post-/v2/calls\">Upload</a> new or  <a href=\"#put-/v2/calls/-id-/media\">update</a>  call recordings in Gong, in order to support cases where you have an internal system that records  calls or obtains them from a third-party entity. </li> <li> <a href=\"#post-/v2/data-privacy/erase-data-for-email-address\">Data Privacy</a>:  Delete users and all their associated elements.</li> <li> Upload <a href=\"#tag--CRM\">CRM</a> data into Gong.  </li> </ol> <p>Base URL for all API calls is <a href=\"https://us-55616.api.gong.io\"> https://us-55616.api.gong.io </a> </p> <h2>Authentication</h2>  <p> There are two ways to retrieve credentials to the Gong Public API: </p> <ol><li>Retrieve Manually:<br> <p> In the <a href=\"https://app.gong.io/company/api\">Gong API Page</a> (you must be a technical administrator in Gong), click \"Create\" to receive an <b>Access Key</b>  and an <b>Access Key Secret</b>.<br> </p> <p> Use the Basic Authorization HTTP header (as per <a target=\"_blank\" href=\"https://www.rfc-editor.org/rfc/rfc7617.txt\">RFC</a>) to access the Public API as shown below:<br> <code>Authorization: Basic &lt;token&gt;</code><br> </p> <p> To create the basic token, combine the <b>Access Key</b> and the <b>Access Key Secret</b> with  colon (:) and then encode in Base64 as following:<br> <code>Base64(&lt;accessKey&gt; : &lt;accessKeySecret&gt;)</code><br><br> </p></li> <li>Retrieve through OAuth<br> <p> To obtain the Bearer token, follow the steps described in the <a target=\"_blank\" href=\"https://help.gong.io/hc/en-us/articles/360056677792\">Gong OAuth Guide</a>. <br></p> <p> After obtaining the token, use the Bearer Authorization HTTP header (as per <a target=\"_blank\" href=\"https://www.rfc-editor.org/rfc/rfc6750.txt\">RFC</a>) to access the Public API as shown below:<br> <code>Authorization: Bearer &lt;token&gt;</code> </p> </li></ol> <h2>Limits</h2>  <p> By default Gong limits your company's access to the service to 3 API calls per second, and 10,000 API calls per day. </p> <p> When the rate of API calls exceeds these limits an HTTP status code <b>429</b> is returned and a <b>Retry-After</b> header indicates  how many seconds to wait before making a new request. </p><p> If required, contact help@gong.io to change these limits. </p>  <h2>Cursors</h2>  <p> Some API calls that return a list are limited in the amount of records they may return, so multiple API calls may be  required to bring all records. Such an API call also returns a <b>records</b> field, which contains the number of records  in the current page, the current page number and the total number of records. </p> <p> In cases where the total number of records exceeds the number of records thus far retrieved, the <b>records</b> field will also  contain a <b>cursor</b> field which can be used to access the next page of records. To retrieve the next page, repeat the API call with  the <b>cursor</b> value as supplied by the previous API call. All other request inputs should remain the same. </p> <h2>Forward Compatibility</h2>  <p> When coding a system to accept Gong data, take into account that Gong may, without prior warning, add fields to the JSON output.  It is recommended to future proof your code so that it disregards all JSON fields you don't actually use.  </p><p></p>
+## Overview
+
+The Gong API allows you to:
+
+1. Receive the following information from Gong:
+    1. Your company's [calls](https://us-55616.app.gong.io/settings/api/documentation#tag--Calls) in Gong
+    1. Your company's [users](https://us-55616.app.gong.io/settings/api/documentation#tag--Users) in Gong
+    1. Your company's user [stats](https://us-55616.app.gong.io/settings/api/documentation#tag--Stats) in Gong
+    1. Your company's user [settings](https://us-55616.app.gong.io/settings/api/documentation#tag--Settings) in Gong
+    1. Your company's [libraries](https://us-55616.app.gong.io/settings/api/documentation#tag--Library) in Gong
+1. [Upload](https://us-55616.app.gong.io/settings/api/documentation#post-/v2/calls) new or [update](https://us-55616.app.gong.io/settings/api/documentation#put-/v2/calls/-id-/media) call recordings in Gong, in order to support cases where you have an internal system that records calls or obtains them from a third-party entity.
+1. [Data Privacy](https://us-55616.app.gong.io/settings/api/documentation#post-/v2/data-privacy/erase-data-for-email-address): Delete users and all their associated elements.
+1. Upload [CRM](https://us-55616.app.gong.io/settings/api/documentation#tag--CRM) data into Gong.
+
+Base URL for all API calls is `https://us-55616.api.gong.io`
+
+## Authentication
+
+There are two ways to retrieve credentials to the Gong Public API:
+
+1. Retrieve Manually:
+    In the Gong API Page (you must be a technical administrator in Gong), click "Create" to receive an Access Key and an Access Key Secret.
+    Use the Basic Authorization HTTP header (as per RFC) to access the Public API as shown below:
+    `Authorization: Basic <token>`
+    To create the basic token, combine the Access Key and the Access Key Secret with colon (:) and then encode in Base64 as following:
+    `Base64(<accessKey> : <accessKeySecret>)`
+
+1. Retrieve through OAuth
+    To obtain the Bearer token, follow the steps described in the Gong OAuth Guide.
+
+    After obtaining the token, use the Bearer Authorization HTTP header (as per RFC) to access the Public API as shown below:
+    `Authorization: Bearer <token>`
+
+## Limits
+
+By default Gong limits your company's access to the service to 3 API calls per second, and 10,000 API calls per day.
+
+When the rate of API calls exceeds these limits an HTTP status code 429 is returned and a Retry-After header indicates how many seconds to wait before making a new request.
+
+If required, contact help@gong.io to change these limits.
+
+## Cursors
+
+Some API calls that return a list are limited in the amount of records they may return, so multiple API calls may be required to bring all records. Such an API call also returns a records field, which contains the number of records in the current page, the current page number and the total number of records.
+
+In cases where the total number of records exceeds the number of records thus far retrieved, the records field will also contain a cursor field which can be used to access the next page of records. To retrieve the next page, repeat the API call with the cursor value as supplied by the previous API call. All other request inputs should remain the same.
+
+## Forward Compatibility
+
+When coding a system to accept Gong data, take into account that Gong may, without prior warning, add fields to the JSON output. It is recommended to future proof your code so that it disregards all JSON fields you don't actually use.
+
+## Swagger
 
 This SDK is automatically generated by the [Swagger Codegen](https://github.com/swagger-api/swagger-codegen) project:
 
@@ -13,7 +64,19 @@ This SDK is automatically generated by the [Swagger Codegen](https://github.com/
 
 ## Installation
 
-### Build a gem
+### Rubygems
+
+```shell
+gem install gong_api
+```
+
+If you're using Bundler, you can add this to your `Gemfile`
+
+```
+    gem 'gong_api'
+```
+
+### Building the gem locally
 
 To build the Ruby code into a gem:
 
@@ -21,18 +84,12 @@ To build the Ruby code into a gem:
 gem build gong_api.gemspec
 ```
 
-Then either install the gem locally:
+Then install the gem locally:
 
 ```shell
 gem install ./gong_api-1.0.0.gem
 ```
 (for development, run `gem install --dev ./gong_api-1.0.0.gem` to install the development dependencies)
-
-or publish the gem to a gem hosting service, e.g. [RubyGems](https://rubygems.org/).
-
-Finally add this to the Gemfile:
-
-    gem 'gong_api', '~> 1.0.0'
 
 ### Install from Git
 
