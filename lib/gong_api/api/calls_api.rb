@@ -315,8 +315,8 @@ module GongAPI
     # @option opts [String] :cursor When paging is needed, provide the value supplied by the previous API call to bring the following page of records.
     # @option opts [String] :workspace_id Optional Workspace identifier, if supplied the API will return only the calls belonging to this workspace.
     # @return [CallsResponse]
-    def list_calls_using_get1(from_date_time, to_date_time, opts = {})
-      data, _status_code, _headers = list_calls_using_get1_with_http_info(from_date_time, to_date_time, opts)
+    def list_calls_using_get(from_date_time, to_date_time, opts = {})
+      data, _status_code, _headers = list_calls_using_get_with_http_info(from_date_time, to_date_time, opts)
       data
     end
 
@@ -328,17 +328,17 @@ module GongAPI
     # @option opts [String] :cursor When paging is needed, provide the value supplied by the previous API call to bring the following page of records.
     # @option opts [String] :workspace_id Optional Workspace identifier, if supplied the API will return only the calls belonging to this workspace.
     # @return [Array<(CallsResponse, Integer, Hash)>] CallsResponse data, response status code and response headers
-    def list_calls_using_get1_with_http_info(from_date_time, to_date_time, opts = {})
+    def list_calls_using_get_with_http_info(from_date_time, to_date_time, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: CallsApi.list_calls_using_get1 ...'
+        @api_client.config.logger.debug 'Calling API: CallsApi.list_calls_using_get ...'
       end
       # verify the required parameter 'from_date_time' is set
       if @api_client.config.client_side_validation && from_date_time.nil?
-        fail ArgumentError, "Missing the required parameter 'from_date_time' when calling CallsApi.list_calls_using_get1"
+        fail ArgumentError, "Missing the required parameter 'from_date_time' when calling CallsApi.list_calls_using_get"
       end
       # verify the required parameter 'to_date_time' is set
       if @api_client.config.client_side_validation && to_date_time.nil?
-        fail ArgumentError, "Missing the required parameter 'to_date_time' when calling CallsApi.list_calls_using_get1"
+        fail ArgumentError, "Missing the required parameter 'to_date_time' when calling CallsApi.list_calls_using_get"
       end
       # resource path
       local_var_path = '/v2/calls'
@@ -373,7 +373,7 @@ module GongAPI
         :return_type => return_type)
 
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: CallsApi#list_calls_using_get1\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: CallsApi#list_calls_using_get\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end

@@ -328,10 +328,10 @@ opts = {
 
 begin
   #Retrieve call data by date range (/v2/calls)
-  result = api_instance.list_calls_using_get1(from_date_time, to_date_time, opts)
+  result = api_instance.list_calls_using_get(from_date_time, to_date_time, opts)
   p result
 rescue GongAPI::ApiError => e
-  puts "Exception when calling CallsApi->list_calls_using_get1: #{e}"
+  puts "Exception when calling CallsApi->list_calls_using_get: #{e}"
 end
 
 api_instance = GongAPI::CallsApi.new
@@ -759,7 +759,7 @@ Class | Method | HTTP request | Description
 *GongAPI::CallsApi* | [**get_call_transcripts_using_post**](docs/CallsApi.md#get_call_transcripts_using_post) | **POST** /v2/calls/transcript | Retrieve transcripts of calls by date or callIds (/v2/calls/transcript)
 *GongAPI::CallsApi* | [**get_call_using_get**](docs/CallsApi.md#get_call_using_get) | **GET** /v2/calls/{id} | Retrieve data for a specific call (/v2/calls/{id})
 *GongAPI::CallsApi* | [**list_calls_extensive_using_post**](docs/CallsApi.md#list_calls_extensive_using_post) | **POST** /v2/calls/extensive | Retrieve detailed call data by various filters (/v2/calls/extensive)
-*GongAPI::CallsApi* | [**list_calls_using_get1**](docs/CallsApi.md#list_calls_using_get1) | **GET** /v2/calls | Retrieve call data by date range (/v2/calls)
+*GongAPI::CallsApi* | [**list_calls_using_get**](docs/CallsApi.md#list_calls_using_get) | **GET** /v2/calls | Retrieve call data by date range (/v2/calls)
 *GongAPI::CallsApi* | [**list_crm_calls_manual_association_using_get**](docs/CallsApi.md#list_crm_calls_manual_association_using_get) | **GET** /v2/calls/manual-crm-associations | List all calls that were manually associated with CRM objects (/v2/calls/manual-crm-associations) in Beta Phase
 *GongAPI::DataPrivacyApi* | [**find_all_references_to_email_address_using_get**](docs/DataPrivacyApi.md#find_all_references_to_email_address_using_get) | **GET** /v2/data-privacy/data-for-email-address | Retrieve all references to an email address. (/v2/data-privacy/data-for-email-address)
 *GongAPI::DataPrivacyApi* | [**find_all_references_to_phone_number_using_get**](docs/DataPrivacyApi.md#find_all_references_to_phone_number_using_get) | **GET** /v2/data-privacy/data-for-phone-number | Retrieve all references to a phone number. (/v2/data-privacy/data-for-phone-number)

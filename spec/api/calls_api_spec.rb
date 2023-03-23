@@ -92,7 +92,7 @@ describe 'CallsApi' do
     end
   end
 
-  # unit tests for list_calls_using_get1
+  # unit tests for list_calls_using_get
   # Retrieve call data by date range (/v2/calls)
   # List calls that took place during a specified date range.  When accessed through a Bearer token authorization method, this endpoint requires the scope &#x27;api:calls:read:basic&#x27;.
   # @param from_date_time The date from which to list calls, in the ISO-8601 format (e.g., &#x27;2018-02-18T02:30:00-07:00&#x27; or &#x27;2018-02-18T08:00:00Z&#x27;, where Z stands for UTC); if not specified, the calls start with the earliest recorded call. For web-conference calls recorded by Gong, the date denotes its scheduled time, otherwise, it denotes its actual start time.
@@ -101,7 +101,7 @@ describe 'CallsApi' do
   # @option opts [String] :cursor When paging is needed, provide the value supplied by the previous API call to bring the following page of records.
   # @option opts [String] :workspace_id Optional Workspace identifier, if supplied the API will return only the calls belonging to this workspace.
   # @return [CallsResponse]
-  describe 'list_calls_using_get1 test' do
+  describe 'list_calls_using_get test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end

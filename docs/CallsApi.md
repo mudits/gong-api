@@ -9,7 +9,7 @@ Method | HTTP request | Description
 [**get_call_transcripts_using_post**](CallsApi.md#get_call_transcripts_using_post) | **POST** /v2/calls/transcript | Retrieve transcripts of calls by date or callIds (/v2/calls/transcript)
 [**get_call_using_get**](CallsApi.md#get_call_using_get) | **GET** /v2/calls/{id} | Retrieve data for a specific call (/v2/calls/{id})
 [**list_calls_extensive_using_post**](CallsApi.md#list_calls_extensive_using_post) | **POST** /v2/calls/extensive | Retrieve detailed call data by various filters (/v2/calls/extensive)
-[**list_calls_using_get1**](CallsApi.md#list_calls_using_get1) | **GET** /v2/calls | Retrieve call data by date range (/v2/calls)
+[**list_calls_using_get**](CallsApi.md#list_calls_using_get) | **GET** /v2/calls | Retrieve call data by date range (/v2/calls)
 [**list_crm_calls_manual_association_using_get**](CallsApi.md#list_crm_calls_manual_association_using_get) | **GET** /v2/calls/manual-crm-associations | List all calls that were manually associated with CRM objects (/v2/calls/manual-crm-associations) in Beta Phase
 
 # **add_call_recording_using_put**
@@ -245,8 +245,8 @@ No authorization required
 
 
 
-# **list_calls_using_get1**
-> CallsResponse list_calls_using_get1(from_date_time, to_date_time, opts)
+# **list_calls_using_get**
+> CallsResponse list_calls_using_get(from_date_time, to_date_time, opts)
 
 Retrieve call data by date range (/v2/calls)
 
@@ -267,10 +267,10 @@ opts = {
 
 begin
   #Retrieve call data by date range (/v2/calls)
-  result = api_instance.list_calls_using_get1(from_date_time, to_date_time, opts)
+  result = api_instance.list_calls_using_get(from_date_time, to_date_time, opts)
   p result
 rescue GongAPI::ApiError => e
-  puts "Exception when calling CallsApi->list_calls_using_get1: #{e}"
+  puts "Exception when calling CallsApi->list_calls_using_get: #{e}"
 end
 ```
 
