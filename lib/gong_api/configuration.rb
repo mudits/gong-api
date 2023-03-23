@@ -191,8 +191,7 @@ module GongAPI
 
     # Returns Auth Settings hash for api client.
     def auth_settings
-      {
-      }
+      {}
     end
   end
 end

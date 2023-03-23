@@ -52,6 +52,5 @@ module GongAPI
 
       msg
     end
-
   end
 end

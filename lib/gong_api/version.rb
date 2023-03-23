@@ -10,5 +10,5 @@ Swagger Codegen version: 3.0.37
 =end
 
 module GongAPI
-  VERSION = '1.0.0'
+  VERSION = '1.1.0'
 end
