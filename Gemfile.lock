@@ -52,6 +52,8 @@ GEM
       rainbow (>= 2.2.2, < 4.0)
       ruby-progressbar (~> 1.7)
       unicode-display_width (>= 1.4.0, < 1.6)
+    rubocop-rspec (1.35.0)
+      rubocop (>= 0.60.0)
     ruby-progressbar (1.13.0)
     stringio (3.0.5)
     typhoeus (1.4.0)
@@ -67,6 +69,7 @@ DEPENDENCIES
   rake (~> 13.0.1)
   rspec (~> 3.6, >= 3.6.0)
   rubocop (~> 0.66.0)
+  rubocop-rspec
 
 BUNDLED WITH
    2.4.7
