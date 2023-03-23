@@ -67,14 +67,14 @@ describe 'UsersApi' do
     end
   end
 
-  # unit tests for list_users_using_get1
+  # unit tests for list_users_using_get
   # List all users (/v2/users)
   # List all of the company&#x27;s users.  When accessed through a Bearer token authorization method, this endpoint requires the scope &#x27;api:users:read&#x27;.
   # @param [Hash] opts the optional parameters
   # @option opts [String] :cursor When paging is needed, provide the value supplied by the previous API call to bring the following page of records.
   # @option opts [BOOLEAN] :include_avatars Avatars are synthetic users representing Gong employees (CSMs and support providers) when they access your instance. References to avatars&#x27; IDs may be found in the outputs of other API endpoints. This parameter is optional, if not provided avatars will not be included in the results.
   # @return [UsersMetadata]
-  describe 'list_users_using_get1 test' do
+  describe 'list_users_using_get test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end

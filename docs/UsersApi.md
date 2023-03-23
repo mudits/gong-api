@@ -7,7 +7,7 @@ Method | HTTP request | Description
 [**get_user_history_using_get**](UsersApi.md#get_user_history_using_get) | **GET** /v2/users/{id}/settings-history | Retrieve user history (/v2/users/{id}/settings-history)
 [**get_user_using_get**](UsersApi.md#get_user_using_get) | **GET** /v2/users/{id} | Retrieve user (/v2/users/{id})
 [**list_multiple_users_using_post**](UsersApi.md#list_multiple_users_using_post) | **POST** /v2/users/extensive | List users by filter (/v2/users/extensive)
-[**list_users_using_get1**](UsersApi.md#list_users_using_get1) | **GET** /v2/users | List all users (/v2/users)
+[**list_users_using_get**](UsersApi.md#list_users_using_get) | **GET** /v2/users | List all users (/v2/users)
 
 # **get_user_history_using_get**
 > SettingsHistory get_user_history_using_get(id)
@@ -147,8 +147,8 @@ No authorization required
 
 
 
-# **list_users_using_get1**
-> UsersMetadata list_users_using_get1(opts)
+# **list_users_using_get**
+> UsersMetadata list_users_using_get(opts)
 
 List all users (/v2/users)
 
@@ -167,10 +167,10 @@ opts = {
 
 begin
   #List all users (/v2/users)
-  result = api_instance.list_users_using_get1(opts)
+  result = api_instance.list_users_using_get(opts)
   p result
 rescue GongAPI::ApiError => e
-  puts "Exception when calling UsersApi->list_users_using_get1: #{e}"
+  puts "Exception when calling UsersApi->list_users_using_get: #{e}"
 end
 ```
 

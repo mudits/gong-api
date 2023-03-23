@@ -730,10 +730,10 @@ opts = {
 
 begin
   #List all users (/v2/users)
-  result = api_instance.list_users_using_get1(opts)
+  result = api_instance.list_users_using_get(opts)
   p result
 rescue GongAPI::ApiError => e
-  puts "Exception when calling UsersApi->list_users_using_get1: #{e}"
+  puts "Exception when calling UsersApi->list_users_using_get: #{e}"
 end
 ```
 
@@ -792,7 +792,7 @@ Class | Method | HTTP request | Description
 *GongAPI::UsersApi* | [**get_user_history_using_get**](docs/UsersApi.md#get_user_history_using_get) | **GET** /v2/users/{id}/settings-history | Retrieve user history (/v2/users/{id}/settings-history)
 *GongAPI::UsersApi* | [**get_user_using_get**](docs/UsersApi.md#get_user_using_get) | **GET** /v2/users/{id} | Retrieve user (/v2/users/{id})
 *GongAPI::UsersApi* | [**list_multiple_users_using_post**](docs/UsersApi.md#list_multiple_users_using_post) | **POST** /v2/users/extensive | List users by filter (/v2/users/extensive)
-*GongAPI::UsersApi* | [**list_users_using_get1**](docs/UsersApi.md#list_users_using_get1) | **GET** /v2/users | List all users (/v2/users)
+*GongAPI::UsersApi* | [**list_users_using_get**](docs/UsersApi.md#list_users_using_get) | **GET** /v2/users | List all users (/v2/users)
 
 ## Documentation for Models
 

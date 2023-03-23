@@ -192,8 +192,8 @@ module GongAPI
     # @option opts [String] :cursor When paging is needed, provide the value supplied by the previous API call to bring the following page of records.
     # @option opts [BOOLEAN] :include_avatars Avatars are synthetic users representing Gong employees (CSMs and support providers) when they access your instance. References to avatars&#x27; IDs may be found in the outputs of other API endpoints. This parameter is optional, if not provided avatars will not be included in the results.
     # @return [UsersMetadata]
-    def list_users_using_get1(opts = {})
-      data, _status_code, _headers = list_users_using_get1_with_http_info(opts)
+    def list_users_using_get(opts = {})
+      data, _status_code, _headers = list_users_using_get_with_http_info(opts)
       data
     end
 
@@ -203,9 +203,9 @@ module GongAPI
     # @option opts [String] :cursor When paging is needed, provide the value supplied by the previous API call to bring the following page of records.
     # @option opts [BOOLEAN] :include_avatars Avatars are synthetic users representing Gong employees (CSMs and support providers) when they access your instance. References to avatars&#x27; IDs may be found in the outputs of other API endpoints. This parameter is optional, if not provided avatars will not be included in the results.
     # @return [Array<(UsersMetadata, Integer, Hash)>] UsersMetadata data, response status code and response headers
-    def list_users_using_get1_with_http_info(opts = {})
+    def list_users_using_get_with_http_info(opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: UsersApi.list_users_using_get1 ...'
+        @api_client.config.logger.debug 'Calling API: UsersApi.list_users_using_get ...'
       end
       # resource path
       local_var_path = '/v2/users'
@@ -238,7 +238,7 @@ module GongAPI
         :return_type => return_type)
 
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: UsersApi#list_users_using_get1\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: UsersApi#list_users_using_get\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
