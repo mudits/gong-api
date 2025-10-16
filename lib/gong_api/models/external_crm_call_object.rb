@@ -18,7 +18,7 @@ module GongAPI
     attr_accessor :fields
 
     # Object ID. For Salesforce both case-sensitive and case-insensitive formats are supported.
-    attr_accessor :object_id
+    attr_accessor :external_object_id
 
     # Object Type. e.g. Account.
     attr_accessor :object_type
@@ -49,7 +49,7 @@ module GongAPI
     def self.attribute_map
       {
         :'fields' => :'fields',
-        :'object_id' => :'objectId',
+        :'external_object_id' => :'objectId',
         :'object_type' => :'objectType'
       }
     end
@@ -58,7 +58,7 @@ module GongAPI
     def self.openapi_types
       {
         :'fields' => :'Object',
-        :'object_id' => :'Object',
+        :'external_object_id' => :'Object',
         :'object_type' => :'Object'
       }
     end
@@ -90,8 +90,8 @@ module GongAPI
         end
       end
 
-      if attributes.key?(:'object_id')
-        self.object_id = attributes[:'object_id']
+      if attributes.key?(:'external_object_id')
+        self.external_object_id = attributes[:'external_object_id']
       end
 
       if attributes.key?(:'object_type')
@@ -103,8 +103,8 @@ module GongAPI
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
-      if @object_id.nil?
-        invalid_properties.push('invalid value for "object_id", object_id cannot be nil.')
+      if @external_object_id.nil?
+        invalid_properties.push('invalid value for "external_object_id", external_object_id cannot be nil.')
       end
 
       if @object_type.nil?
@@ -117,7 +117,7 @@ module GongAPI
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @object_id.nil?
+      return false if @external_object_id.nil?
       return false if @object_type.nil?
       object_type_validator = EnumAttributeValidator.new('Object', ['Account', 'Opportunity'])
       return false unless object_type_validator.valid?(@object_type)
@@ -140,7 +140,7 @@ module GongAPI
       return true if self.equal?(o)
       self.class == o.class &&
           fields == o.fields &&
-          object_id == o.object_id &&
+          external_object_id == o.external_object_id &&
           object_type == o.object_type
     end
 
@@ -153,7 +153,7 @@ module GongAPI
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [fields, object_id, object_type].hash
+      [fields, external_object_id, object_type].hash
     end
 
     # Builds the object from hash
