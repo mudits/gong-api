@@ -18,7 +18,7 @@ module GongAPI
     attr_accessor :fields
 
     # Object ID
-    attr_accessor :object_id
+    attr_accessor :external_object_id
 
     # Object Type. e.g. Lead
     attr_accessor :object_type
@@ -52,7 +52,7 @@ module GongAPI
     def self.attribute_map
       {
         :'fields' => :'fields',
-        :'object_id' => :'objectId',
+        :'external_object_id' => :'objectId',
         :'object_type' => :'objectType',
         :'timing' => :'timing'
       }
@@ -62,7 +62,7 @@ module GongAPI
     def self.openapi_types
       {
         :'fields' => :'Object',
-        :'object_id' => :'Object',
+        :'external_object_id' => :'Object',
         :'object_type' => :'Object',
         :'timing' => :'Object'
       }
@@ -95,8 +95,8 @@ module GongAPI
         end
       end
 
-      if attributes.key?(:'object_id')
-        self.object_id = attributes[:'object_id']
+      if attributes.key?(:'external_object_id')
+        self.external_object_id = attributes[:'external_object_id']
       end
 
       if attributes.key?(:'object_type')
@@ -151,7 +151,7 @@ module GongAPI
       return true if self.equal?(o)
       self.class == o.class &&
           fields == o.fields &&
-          object_id == o.object_id &&
+          external_object_id == o.external_object_id &&
           object_type == o.object_type &&
           timing == o.timing
     end
@@ -165,7 +165,7 @@ module GongAPI
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [fields, object_id, object_type, timing].hash
+      [fields, external_object_id, object_type, timing].hash
     end
 
     # Builds the object from hash
